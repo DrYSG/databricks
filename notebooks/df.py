@@ -19,14 +19,10 @@ employee4 = Employee(None, 'wendell', 'no-reply@berkeley.edu', 160000)
 employee5 = Employee('michael', 'jackson', 'no-reply@neverla.nd', 80000)
 
 # Create the DepartmentWithEmployees instances from Departments and Employees
-departmentWithEmployees1 = Row(
-    department=department1, employees=[employee1, employee2])
-departmentWithEmployees2 = Row(
-    department=department2, employees=[employee3, employee4])
-departmentWithEmployees3 = Row(
-    department=department3, employees=[employee5, employee4])
-departmentWithEmployees4 = Row(
-    department=department4, employees=[employee2, employee3])
+departmentWithEmployees1 = Row(department=department1, employees=[employee1, employee2])
+departmentWithEmployees2 = Row(department=department2, employees=[employee3, employee4])
+departmentWithEmployees3 = Row(department=department3, employees=[employee5, employee4])
+departmentWithEmployees4 = Row(department=department4, employees=[employee2, employee3])
 
 print(department1)
 print(employee2)
@@ -34,16 +30,15 @@ print(departmentWithEmployees1.employees[0].email)
 
 # COMMAND ----------
 
-departmentsWithEmployeesSeq1 = [
-    departmentWithEmployees1, departmentWithEmployees2]
+departmentsWithEmployeesSeq1 = [departmentWithEmployees1, departmentWithEmployees2]
 df1 = spark.createDataFrame(departmentsWithEmployeesSeq1)
 
 display(df1)
 
-departmentsWithEmployeesSeq2 = [
-    departmentWithEmployees3, departmentWithEmployees4]
+departmentsWithEmployeesSeq2 = [departmentWithEmployees3, departmentWithEmployees4]
 df2 = spark.createDataFrame(departmentsWithEmployeesSeq2)
 
 display(df2)
 
 # COMMAND ----------
+
